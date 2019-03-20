@@ -30,25 +30,14 @@
 </header>
             <main class="main">
                 <section class="posts clearfix">
-    <div class="posts-wrapper">
-    
-        <article class="post article-entry">
-            <div class="post-title">
-                <a class="post-title-link text-underline" href="/2019/03/11/Hello-World/">Hello World</a>
-            </div>
-            <p class="sub">Mar 11 2019</p>
-            <div class="post-content">
-                <h2 id="What’s-blogs-about"><a href="#What’s-blogs-about" class="headerlink" title="What’s blogs about?"></a>What’s blogs about?</h2><h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><h3 id="Beer"><a href="#Beer" class="headerlink" title="Beer"></a>Beer</h3><h3 id="Badminton-Training-Physical-Training-Recovery-Of-Sports-Injuries"><a href="#Badminton-Training-Physical-Training-Recovery-Of-Sports-Injuries" class="headerlink" title="Badminton Training/Physical Training/Recovery Of Sports Injuries"></a>Badminton Training/Physical Training/Recovery Of Sports Injuries</h3>
-            </div>
-        </article>
-    
-        <article class="post article-entry">
-            <div class="post-title">
-                <a class="post-title-link text-underline" href="/2019/03/11/Git-Rebase/">Hello World</a>
-            </div>
-            <p class="sub">Mar 11 2019</p>
-            <div class="post-content">
-                <h1 id="What-does-“git-rebase”-do"><a href="#What-does-“git-rebase”-do" class="headerlink" title="What does “git rebase” do?"></a>What does “git rebase” do?</h1><p>In a word, combine several commits.</p>
+<div class="post-wrapper">
+    <article class="post article-entry">
+    <div class="post-title">
+        Hello World
+    </div>
+    <p class="sub">Mar 11 2019</p>
+    <div class="post-content">
+        <h1 id="What-does-“git-rebase”-do"><a href="#What-does-“git-rebase”-do" class="headerlink" title="What does “git rebase” do?"></a>What does “git rebase” do?</h1><p>In a word, combine several commits.</p>
 <h1 id="Why-need-this"><a href="#Why-need-this" class="headerlink" title="Why need this?"></a>Why need this?</h1><p>If we merge many commits into release branch (master for example) but just for one feature, after several days, our master branch will contains many commits that make no sense. We need to organize every commit so that keeping the main branch organized and making it easy to track.</p>
 <h1 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h1><p><img src="./git-rebase-source/git-log-original.png]" alt><br>Like the example, I have 4 commits (Commit 0,1,2,3). What I want to do is combining Commit 1,   Commit 2, Commit 3 to be one commit . And then push it to origin.</p>
 <h2 id="Ordinary-Process"><a href="#Ordinary-Process" class="headerlink" title="Ordinary Process"></a>Ordinary Process</h2><p>Usually, use the command (I guess many of us don’t like to read the git  help):<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase -i [HEAD~x] | [commit id]</span><br></pre></td></tr></table></figure></p>
@@ -57,34 +46,43 @@
 <p>Or<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; git rebase -i 401d6a332ec6bab73af214b096aecc6bb1052c83</span><br><span class="line">&gt;  ( Commit id of Commit 0)</span><br></pre></td></tr></table></figure></p>
 <p>If you use git rebase -i [commit id] , you should choose the commit just behind the earliest commit of all you want to deal with. In this case ,that is commit 0.<br>Then it shows :<br>[image:C223BA70-DDF0-416B-9CAD-A6915C874B45-7384-0000A1BC64CE85E3/86E0E39F-BC58-45CE-ABAE-A2C4BF136043.png]<br>Replace the “pick” of the front  of the commits you want to combine with “s” or “squash”, but not include the first commit. So in this case, I will do that to the second and third line (Commit 2 and Commit 3) . And the save it.<br>[image:61FA444A-0614-450E-BFBC-DAB05E3A584A-7384-0000A265ABD09F9D/AE9F382E-4A50-44F5-AF51-1C64AB75A3CA.png]<br>Then it will shows the vim of editing the combination of  the commits. After finishing editing it, use :wq to save it.<br>[image:864C4143-D0B9-4D2E-9F34-A492B160EC23-7384-0000A27EC1F3D219/EE9BC0B2-3D2F-4BD7-AA62-6F824EA56106.png]<br>And then if we use “git log” we can see it’s success.<br>[image:D96FB097-1BFB-43BD-B6EE-300BC38068F3-7384-0000A299805FC1EB/F70D662D-F970-4976-A499-789BF32C9A2B.png]<br>After rebase done, git log has just one commit.<br>Push it to origin.<br>If you have some of the commits you have combined pushed to remote origin, you will see commit diverse by using git status. Just use push -f to push it to origin.</p>
 
-            </div>
-        </article>
-    
-</div>
-<div class="side-bar">
-
-
-    <div class="avator" id="avator">
-    <div class="title">
-        <a href="#" class="text-underline">About Me</a>
     </div>
-        <img src="avator.jpg" class="ava-img">
-        <h3 class="author">Drin Tu</h3>
-        <div class="icon-list">
-        <!-- <a href=""><i class="iconfont icon-weibo icon-item"></i></a> -->
-        <!-- <a href=""><i class="iconfont icon-email icon-item"></i></a> -->
-        <a href="https://github.com/DrinTu"><i class="iconfont icon-github icon-item"></i></a>
-        <!-- <a href=""><i class="iconfont icon-linkedin icon-item"></i></a> -->
+    </article>
+</div>
+
+    <div class="_toc">
+        <strong class="toc-title">
+        Contents
+        </strong>
+        <div class="toc-content">
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#What-does-“git-rebase”-do"><span class="toc-text">What does “git rebase” do?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-need-this"><span class="toc-text">Why need this?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Example"><span class="toc-text">Example:</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Ordinary-Process"><span class="toc-text">Ordinary Process</span></a></li></ol></li></ol>
         </div>
-    <div class="tags">
-    <h3 class="tags-title">Tags</h3>
-    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Overview/">Overview</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li></ul>
-</div>
     </div>
-</div>
 
 </section>
 
+
+    <nav class="post-nav">
+        
+            <div class="page-tags">
+                
+                    <a href="/tags/Git/">Git</a>
+                
+            </div>
+        
+    </nav>
+
+
+
+    <nav class="paginator">
+        
+            <a class="prev" href="/2019/03/11/Hello-World/">
+                <i class="iconfont icon-left"></i>
+                <span class="prev-text">Hello World</span>
+            </a>
+        
+        
+    </nav>
 
 
             </main>
